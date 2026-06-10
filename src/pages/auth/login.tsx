@@ -1,4 +1,6 @@
-function Signup() {
+import { X } from 'lucide-react';
+
+function Login() {
   return (
     <div style={{
       minHeight: "100vh",
@@ -13,18 +15,14 @@ function Signup() {
         borderRadius: "12px",
         width: "360px",
         border: "1px solid #7c3aed",
-        boxShadow: "0 0 20px rgba(124, 58, 237, 0.3)"
+        boxShadow: "0 0 20px rgba(124, 58, 237, 0.3)",
+        position: "relative"
       }}>
-        <h2 style={{ color: "#ffffff", textAlign: "center", marginBottom: "8px" }}>Create Account</h2>
-        <p style={{ color: "#888", textAlign: "center", marginBottom: "24px" }}>Sign up to get started</p>
-
-        <label style={{ color: "#ccc", fontSize: "14px" }}>Full Name</label>
-        <input type="text" placeholder="John Doe" style={{
-          display: "block", width: "100%", padding: "10px",
-          margin: "6px 0 16px", borderRadius: "8px",
-          border: "1px solid #7c3aed", backgroundColor: "#0f0f0f",
-          color: "#fff", outline: "none", boxSizing: "border-box"
-        }} />
+        <a href="/" style={{ position: "absolute", top: "16px", right: "16px", color: "#888", cursor: "pointer" }}>
+          <X size={24} />
+        </a>
+        <h2 style={{ color: "#ffffff", textAlign: "center", marginBottom: "8px" }}>Welcome Back</h2>
+        <p style={{ color: "#888", textAlign: "center", marginBottom: "24px" }}>Login to your account</p>
 
         <label style={{ color: "#ccc", fontSize: "14px" }}>Email</label>
         <input type="email" placeholder="you@example.com" style={{
@@ -47,15 +45,15 @@ function Signup() {
           backgroundColor: "#7c3aed", color: "#fff",
           border: "none", borderRadius: "8px",
           fontSize: "16px", cursor: "pointer"
-        }}>Sign Up</button>
+        }}>Login</button>
 
         <p style={{ color: "#888", textAlign: "center", marginTop: "16px", fontSize: "14px" }}>
-          Already have an account?{" "}
-          <a href="/login" style={{ color: "#7c3aed", textDecoration: "none" }}>Login</a>
+          Don't have an account?{" "}
+          <a href="/signup" style={{ color: "#7c3aed", textDecoration: "none" }}>Sign Up</a>
         </p>
       </div>
     </div>
   )
 }
 
-export default Signup
+export default Login

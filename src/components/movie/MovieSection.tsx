@@ -41,7 +41,7 @@ export default function MovieSection({
         <div className="hidden md:flex w-16 items-center justify-center flex-shrink-0 z-10">
           <button 
             onClick={() => scroll('left')}
-            className="bg-zinc-900/90 text-white p-3 rounded-full border border-zinc-700 hover:bg-red-600 hover:border-red-600 transition-all opacity-0 group-hover/section:opacity-100 shadow-xl"
+            className="bg-zinc-900/90 text-white p-3 rounded-full border border-zinc-700 hover:bg-purple-600 hover:border-purple-600 transition-all opacity-0 group-hover/section:opacity-100 shadow-xl"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -68,7 +68,7 @@ export default function MovieSection({
         <div className="hidden md:flex w-16 items-center justify-center flex-shrink-0 z-10">
           <button 
             onClick={() => scroll('right')}
-            className="bg-zinc-900/90 text-white p-3 rounded-full border border-zinc-700 hover:bg-red-600 hover:border-red-600 transition-all opacity-0 group-hover/section:opacity-100 shadow-xl"
+            className="bg-zinc-900/90 text-white p-3 rounded-full border border-zinc-700 hover:bg-purple-600 hover:border-purple-600 transition-all opacity-0 group-hover/section:opacity-100 shadow-xl"
           >
             <ChevronRight className="w-6 h-6" />
           </button>

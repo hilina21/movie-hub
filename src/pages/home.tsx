@@ -32,7 +32,7 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
       <Header />
 
       <main>
@@ -55,7 +55,7 @@ export default function Home() {
 
         <MovieSection
           title="Recommended For You"
-          icon="🎯"
+          icon=""
           movies={mockMovies}
           onMovieClick={setSelectedMovie}
         />
