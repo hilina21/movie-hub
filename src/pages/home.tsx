@@ -1,35 +1,22 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Hero from '../components/layout/Hero';
 import MovieSection from '../components/movie/MovieSection';
 import Footer from '../components/layout/Footer';
-import MovieModal from '../components/movie/MovieModal';
-
-interface Movie {
-  id: number;
-  title: string;
-  poster: string;
-  rating: number;
-  year?: number;
-}
-
-const mockMovies: Movie[] = [
-  { id: 1, title: "Menfesawit Film Samsom Part 2", poster: "/images/media__1780990926929.jpg", rating: 9.8, year: 2024 },
-  { id: 2, title: "Kidus Aba Fre Senbet", poster: "/images/media__1780990933163.jpg", rating: 9.5, year: 2023 },
-  { id: 3, title: "Kidus Aba Matewos", poster: "/images/media__1780990940798.jpg", rating: 9.7, year: 2024 },
-  { id: 4, title: "Like Nebiyat Muse Part 35", poster: "/images/media__1780990947786.jpg", rating: 9.6, year: 2024 },
-  { id: 5, title: "Kdist Herani", poster: "/images/media__1780990956110.jpg", rating: 9.4, year: 2023 },
-  { id: 6, title: "Menfesawit Film Samsom Part 2", poster: "/images/media__1780990926929.jpg", rating: 9.8, year: 2024 },
-
-];
+import { mockMovies, type Movie } from '../data/movies';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+  const navigate = useNavigate();
 
   const filteredMovies = mockMovies.filter(movie =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleMovieClick = (movie: Movie) => {
+    navigate(`/movie/${movie.id}`);
+  };
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
@@ -42,14 +29,14 @@ export default function Home() {
           title="Trending Movies"
           icon="🔥"
           movies={filteredMovies}
-          onMovieClick={setSelectedMovie}
+          onMovieClick={handleMovieClick}
         />
 
         <MovieSection
           title="Top Rated"
           icon="⭐"
           movies={mockMovies}
-          onMovieClick={setSelectedMovie}
+          onMovieClick={handleMovieClick}
           variant="top-rated"
         />
 
@@ -57,16 +44,11 @@ export default function Home() {
           title="Recommended For You"
           icon=""
           movies={mockMovies}
-          onMovieClick={setSelectedMovie}
+          onMovieClick={handleMovieClick}
         />
       </main>
 
       <Footer />
-
-      <MovieModal
-        movie={selectedMovie}
-        onClose={() => setSelectedMovie(null)}
-      />
     </div>
   );
 }

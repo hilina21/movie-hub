@@ -54,7 +54,7 @@ export default function MovieSection({
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {movies.map((movie) => (
-            <div key={movie.id} className="min-w-[160px] md:min-w-[200px] lg:min-w-[240px] flex-shrink-0 snap-start">
+            <div key={movie.id} className="w-[160px] md:w-[200px] lg:w-[240px] flex-shrink-0 snap-start">
               <MovieCard 
                 movie={movie} 
                 onClick={() => onMovieClick(movie)} 

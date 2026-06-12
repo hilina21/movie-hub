@@ -10,12 +10,12 @@ export default function Header() {
       <div className="w-full px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-12">
           {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer">
+          <Link to="/" className="flex items-center gap-3 cursor-pointer">
             <div className="w-9 h-9 bg-gradient-to-br from-purple-600 to-orange-500 rounded-xl flex items-center justify-center text-2xl shadow-lg shadow-purple-500/20">
               {/* 🎬 */}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold tracking-tighter">Movie<span className="text-purple-500">Hub</span></h1>
-          </div>
+          </Link>
         </div>
 
         {/* Right Actions */}
